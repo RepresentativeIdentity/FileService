@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+@model IEnumerable<FileService.Models.RpsBinDataAttachmentListDto>
+
+@{
+    ViewData["Title"] = "Links";
+}
+
+
+<h3>Prilozi</h3>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.FileName, "GetAttachment", new { BinDataID = item.BinDataID })
+        </li>
+    }
+
+</ul>
+
+    </body>
+
+</html>
